@@ -4,12 +4,12 @@ import { Switch, Route } from "react-router-dom";
 import Home from './pages/Home';
 import { connect } from 'react-redux';
 
-const App = ({ activeUsers }) => {
+const App = ({ activeUsers, ws }) => {
   return (
     <div className="App">
       <div className="active-users">active users: {activeUsers}</div>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/" render={() => <Home ws={ws} />} />
       </Switch>
     </div>
   );

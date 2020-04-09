@@ -4,6 +4,11 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case 'SET_ACTIVE_USERS':
+      return {
+        ...state,
+        activeUsers: action.activeUsers,
+      };
     default:
       return state;
   }
